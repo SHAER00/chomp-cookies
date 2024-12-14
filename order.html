@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Cookies - CHOMP</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">CHOMP</div>
+        <div class="nav-dropdown">
+            <button class="dropdown-button">☰</button>
+            <div class="dropdown-content">
+                <a href="index.html">Home</a>
+                <a href="order.html">Order</a>
+                <a href="#catering">Catering</a>
+            </div>
+        </div>
+        <button id="dark-mode-toggle">🌙</button>
+        <div id="cart-icon" class="cart-icon" onclick="toggleCart()">🛒 <span id="cart-count">0</span></div>
+    </header>
+
+    <!-- Cookie Gallery -->
+    <section class="gallery">
+        <h2>Our Cookie Collection</h2>
+        <div class="cookie-gallery">
+            <!-- Cookie Items with Add to Cart -->
+            <div class="cookie-item" onclick="showDetails('Chocolate Chip Cookie', 'Gooey chocolate chips in every bite.', 'images/chocolate-chip.jpg')">
+                <img src="images/chocolate-chip.jpg" alt="Chocolate Chip">
+                <p>Chocolate Chip</p>
+                <button class="add-to-cart" onclick="addToCart('Chocolate Chip Cookie', 1)">Add to Cart</button>
+            </div>
+            <div class="cookie-item" onclick="showDetails('Sugar Cookie', 'Delicious, soft sugar cookies.', 'images/sugar-cookie.jpg')">
+                <img src="images/sugar-cookie.jpg" alt="Sugar Cookie">
+                <p>Sugar Cookie</p>
+                <button class="add-to-cart" onclick="addToCart('Sugar Cookie', 1)">Add to Cart</button>
+            </div>
+            <div class="cookie-item" onclick="showDetails('Peanut Butter Cookie', 'Rich and creamy peanut butter flavor.', 'images/peanut-butter.jpg')">
+                <img src="images/peanut-butter.jpg" alt="Peanut Butter Cookie">
+                <p>Peanut Butter</p>
+                <button class="add-to-cart" onclick="addToCart('Peanut Butter Cookie', 1)">Add to Cart</button>
+            </div>
+            <div class="cookie-item" onclick="showDetails('Oatmeal Raisin Cookie', 'Soft oatmeal cookie with raisins.', 'images/oatmeal-raisin.jpg')">
+                <img src="images/oatmeal-raisin.jpg" alt="Oatmeal Raisin">
+                <p>Oatmeal Raisin</p>
+                <button class="add-to-cart" onclick="addToCart('Oatmeal Raisin Cookie', 1)">Add to Cart</button>
+            </div>
+            <div class="cookie-item" onclick="showDetails('Chocolate Mint Cookie', 'Refreshing mint flavor with chocolate chips.', 'images/chocolate-mint.jpg')">
+                <img src="images/chocolate-mint.jpg" alt="Chocolate Mint">
+                <p>Chocolate Mint</p>
+                <button class="add-to-cart" onclick="addToCart('Chocolate Mint Cookie', 1)">Add to Cart</button>
+            </div>
+            <div class="cookie-item" onclick="showDetails('Cowboy Cookie', 'A warm oatmeal cookie packed with chocolate, coconut, and pecans.', 'images/cowboy-cookie.jpg')">
+                <img src="images/cowboy-cookie.jpg" alt="Cowboy Cookie">
+                <p>Cowboy Cookie</p>
+                <button class="add-to-cart" onclick="addToCart('Cowboy Cookie', 1)">Add to Cart</button>
+            </div>
+            <div class="cookie-item" onclick="showDetails('Double Chocolate Cookie', 'Chocolate lovers dream – rich and double chocolate.', 'images/double-chocolate.jpg')">
+                <img src="images/double-chocolate.jpg" alt="Double Chocolate">
+                <p>Double Chocolate</p>
+                <button class="add-to-cart" onclick="addToCart('Double Chocolate Cookie', 1)">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Sidebar -->
+    <div id="cart-sidebar" class="cart-sidebar">
+        <div class="cart-sidebar-content">
+            <span class="close-btn" onclick="closeCart()">&times;</span>
+            <h2>Your Cart</h2>
+            <div id="cart-items"></div>
+            <button class="checkout-btn">Checkout</button>
+        </div>
+    </div>
+
+    <!-- Modal for Cookie Details -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeDetails()">&times;</span>
+            <h3 id="modal-title"></h3>
+            <img id="modal-image" src="" alt="">
+            <p id="modal-description"></p>
+        </div>
+    </div>
+</body>
+</html>
